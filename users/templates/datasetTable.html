@@ -14,15 +14,34 @@
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
 
-    <title>Dashboard</title>
+    <title>Dataset</title>
 </head>
 <body>
 {% include 'navBar.html' %}
-    <div class="content">
-    {% include 'cards.html' %}
-<!--        {% include 'chart.html' %}-->
-    <div>
-<style>
+<div class="content">
+    <a href="/createds/" class="btn btn-warning" role="button">Add Dataset</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Dataset Name</th>
+            <th scope="col">Source</th>
+            <th scope="col">Host Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for r in rows %}
+        <tr>
+            <th scope="row">1</th>
+            <td>{{r.datasetName}}</td>
+            <td>{{r.sourceType}}</td>
+            <td>{{r.hostName}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    </div>
+        <style>
   .sidebar {
     margin-top: 0;
     padding: 0;

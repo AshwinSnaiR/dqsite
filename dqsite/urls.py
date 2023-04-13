@@ -21,5 +21,10 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", views.index),
     path("login/", views.user_login),
-    path("adduser/", views.create_User)
+    path("adduser/", views.create_User),
+    path("dataset/", views.datasetLoad),
+    path("createds/", views.createDB),
+    path("profile/", views.profiling),
+    path("details/<int:pk_test>/", views.dummy, name = 'details'),
+    path("addprofile/", views.addprofile)
 ]
